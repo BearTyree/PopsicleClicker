@@ -101,7 +101,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + "main" + ".bundle.js";
+/******/ 			return "" + {"0":"loader","2":"main"}[chunkId] + ".bundle.js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -210,7 +210,7 @@
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			0: 0
+/******/ 			1: 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -308,8 +308,8 @@
 /******/ 	/* webpack/runtime/chunk prefetch trigger */
 /******/ 	(() => {
 /******/ 		var chunkToChildrenMap = {
-/******/ 			"1": [
-/******/ 				1
+/******/ 			"0": [
+/******/ 				2
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.prefetch = (chunkId, promises) => (Promise.all(promises).then(() => {
@@ -320,8 +320,8 @@
 /******/ 	
 /******/ 	/* webpack/runtime/startup prefetch */
 /******/ 	(() => {
-/******/ 		__webpack_require__.O(0, [0], () => {
-/******/ 			__webpack_require__.E(1);
+/******/ 		__webpack_require__.O(0, [1], () => {
+/******/ 			__webpack_require__.E(0);
 /******/ 		}, 5);
 /******/ 	})();
 /******/ 	
@@ -330,7 +330,7 @@ var __webpack_exports__ = {};
 console.log('loading screen');
 
 setTimeout(() => {
-  __webpack_require__.e(/* import() | main */ 1).then(__webpack_require__.bind(__webpack_require__, 1)).then((loader) => {
+  __webpack_require__.e(/* import() | loader */ 0).then(__webpack_require__.bind(__webpack_require__, 1)).then((loader) => {
     loader.startLoader();
   });
 }, 3000);
