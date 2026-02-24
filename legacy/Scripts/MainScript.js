@@ -37,10 +37,6 @@ let popsiclesSpent = 0
 //total amount of popsicles
 let popsicleNumber = 0
 let sun_amount = 0
-var showingUpgrades =  false	
-let Name = "Change Name Here"
-var userInput = document.getElementById("newName").value;
-let showingSettings = false
 let biggerWingsUpgradeCost = 200
 
 //CPS
@@ -86,7 +82,7 @@ startWebworker();
 loadGame();
 
 //hide shop on start
-document.getElementById("UpgradesDiv").style.visibility = "hidden"
+// document.getElementById("UpgradesDiv").style.visibility = "hidden"
 document.getElementById("SettingsDiv").style.visibility = "hidden"
 
 function resize() 
@@ -307,31 +303,6 @@ function gameLoop()
 
 //shows and hides the shop
 //void -> void
-function show(){
-	if (showingUpgrades == false)
-	{
-		document.getElementById("UpgradesDiv").style.visibility = "visible"
-		showingUpgrades = true
-	}
-	else
-	{
-		document.getElementById("UpgradesDiv").style.visibility = "hidden"
-		showingUpgrades = false
-	}
-}
-
-function showSettings(){
-	if (showingSettings == false)
-	{
-		document.getElementById("SettingsDiv").style.visibility = "visible"
-		showingSettings = true
-	}
-	else
-	{
-		document.getElementById("SettingsDiv").style.visibility = "hidden"
-		showingSettings = false
-	}
-}
 
 
 function loadGame()
@@ -343,7 +314,6 @@ if (typeof savedGame.popsicleStandUpgradeCost !== "undefined"){popsicleStandUpgr
 if (typeof savedGame.popsicleStandCPS !== "undefined"){popsicleStandCPS = savedGame.popsicleStandCPS}
 
 	if (typeof savedGame.SeaGullLevel !== "undefined"){SeaGullLevel = savedGame.SeaGullLevel}
-	if (typeof savedGame.Name !== "undefined"){Name = savedGame.Name}
 	if (typeof savedGame.SunCPS !== "undefined"){SunCPS = savedGame.SunCPS}
 	if (typeof savedGame.SeaGullCPS !== "undefined"){SeaGullCPS = savedGame.SeaGullCPS}
 	if (typeof savedGame.SeaGulls !== "undefined"){SeaGulls = savedGame.SeaGulls}
@@ -373,7 +343,6 @@ if (typeof savedGame.dogClicks !== "undefined"){dogClicks = savedGame.dogClicks}
 if (typeof savedGame.dogUpgradeCost !== "undefined"){dogUpgradeCost = savedGame.dogUpgradeCost}
 if (typeof savedGame.dogCPS !== "undefined"){dogCPS = savedGame.dogCPS}
 
-	document.getElementById("name").innerHTML = Name
 	w.postMessage({ 
 		SunCPS: SunCPS, 
 		dogCPS: dogCPS,
@@ -401,7 +370,6 @@ popsicleStandUpgradeCost: popsicleStandUpgradeCost,
 popsicleStandCPS: popsicleStandCPS,
 AllTowerClicksDecimal: AllTowerClicksDecimal,
 		SeaGullLevel: SeaGullLevel,
-		Name: Name,
 		Clicks: Clicks,
 		SunClicks: SunClicks,
 		AllClicks: AllClicks,
@@ -436,7 +404,6 @@ function clearSave(){
 	//clear old data
 	localStorage.clear();
 	//set vars to defualt
-	Name = "Change Name Here"
 	biggerWingsUpgradeCost = 200
 	dog_amount = 0
 	AllTowerClicksDecimal = 0
@@ -469,7 +436,6 @@ popsicleStandCPS = 0
 	popsiclesSpent = 0
 	popsicleNumber = 0
 	sun_amount = 0
-	showingUpgrades =  false	
 	SunCPS = 0
 	SeaGullCPS = 0
 	//save new (defualt) values
@@ -479,19 +445,4 @@ popsicleStandCPS = 0
 	startGameLoop()
 	//load new (defualt) data
 	loadGame()
-}
-
-
-function showOverlay() {
-	document.getElementById("overlay").style.display = "block";
-}
-  
-  function hideOverlay() {
-	document.getElementById("overlay").style.display = "none";
-}
-
-function setNewName(){
-	userInput = document.getElementById("newName").value;
-	document.getElementById("name").innerHTML = userInput;
-	Name = document.getElementById("name").value;
 }

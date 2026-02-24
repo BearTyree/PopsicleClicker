@@ -60,7 +60,7 @@
   font-size: 24px;
   margin: auto;
   width: 25%;
-  height: 75%;
+  height: 100%;
   /* Center vertically and horizontally */
   display: flex;
   justify-content: center;
@@ -129,8 +129,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   position: absolute;
-  border-width: 2vmin;
-  border-color: #ffbaf39f;
+  border: 0;
 }
 
 #SettingsTable {
