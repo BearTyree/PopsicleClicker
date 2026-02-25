@@ -10,6 +10,27 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+#top-ad {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 90px; /* standard leaderboard size */
+  padding-right: 16px;
+  box-sizing: border-box;
+  background: none;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#top-ad > div {
+  margin-right: 16px;
+}
+
 #PopsicleStand {
   position: absolute;
   width: 45.3vmin;
@@ -240,7 +261,7 @@
 #BackgroundCenter {
   height: 102vh;
   width: 177vh;
-  background-image: url('../Images/BackgroundCenter.jpg');
+  background-image: url("../Images/BackgroundCenter.jpg");
   background-size: 101%;
   background-repeat: no-repeat;
   z-index: 0;
@@ -256,7 +277,7 @@
 
 #BackgroundLeft {
   --posx: 0px;
-  background-image: url('../Images/Background.jpg');
+  background-image: url("../Images/Background.jpg");
   background-repeat: repeat-x;
   background-size: 178vh;
   background-position: right;
@@ -277,7 +298,7 @@
 
 #BackgroundRight {
   --posx: 0px;
-  background-image: url('../Images/Background.png');
+  background-image: url("../Images/Background.png");
   background-repeat: repeat-x;
   background-size: 178vh;
   background-position: left;
@@ -334,7 +355,7 @@ body {
 }
 
 .text {
-  font-family: 'Comic Sans MS';
+  font-family: "Comic Sans MS";
   color: #4b93ff;
   z-index: 500;
   font-size: 10vmin;
@@ -356,7 +377,7 @@ body {
 
 .priceP {
   font-size: 3vmin;
-  font-family: 'Comic Sans MS';
+  font-family: "Comic Sans MS";
   color: #ffffff;
   margin-top: auto;
   margin-bottom: auto;
@@ -408,7 +429,8 @@ body {
 }
 
 .popsiclePopup {
-  transition: height 3s cubic-bezier(0, 0.2, 0.3, 1),
+  transition:
+    height 3s cubic-bezier(0, 0.2, 0.3, 1),
     opacity 1s cubic-bezier(0, 0.1, 0.4, 1),
     transform 3s cubic-bezier(0, 0.7, 0.8, 1);
   height: 100vmin;
@@ -437,7 +459,7 @@ body {
   scrollbar-width: none; /* Firefox */
   font-size: 4vmin;
   overflow-y: scroll;
-  font-family: 'Comic Sans MS';
+  font-family: "Comic Sans MS";
   resize: none;
   width: 27vh;
   height: 12vh;
@@ -473,7 +495,7 @@ body {
   scrollbar-width: none; /* Firefox */
   font-size: 4vmin;
   overflow-y: scroll;
-  font-family: 'Comic Sans MS';
+  font-family: "Comic Sans MS";
   resize: none;
   width: 27vh;
   height: 12vh;
